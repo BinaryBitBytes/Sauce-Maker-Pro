@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Mustard",
+        "volume": 0.2,
+        "recipe_id": 1
+    },
+    {
+        "name": "Ketchup",
+        "volume": 1,
+        "recipe_id": 2
+    },
+    {
+        "name": "Mayonaisse",
+        "volume": 0.5,
+        "recipe_id": 3
+    }
+ ]
