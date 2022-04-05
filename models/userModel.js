@@ -1,6 +1,6 @@
 const { Model , DataTypes } = require('sequelize'); // requiring sequelize
 const bcrypt = require('bcrypt'); // requiring for encryption
-//const sequelize = require('');
+const sequelize = require('../config/connection.js'); // This is where the DB connection happens.
 
 class User extends Model { // creates a class and extends the class model for user
     checkPassword(loginPass) { // checks the password for the user login
@@ -59,8 +59,8 @@ User.init(
         freezeTableName: true, // does not allow sequelize to manipulate the table name
         underscored: true, // converts all camel cased to lower case and underscored columns
         timestamps: true, // creates a time stamp
-        modelName: 'user', //
+        modelName: 'user', // naming the model
     }
 );
 
-module.exports = User;
+module.exports = User; //exporting the User model as a module
