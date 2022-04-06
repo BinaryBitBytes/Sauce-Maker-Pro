@@ -19,15 +19,6 @@ Instruction.init(
           type: DataTypes.STRING,
           allowNull: false,
         },
-        // This references a recipe object stored in the database.
-        recipe_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              // References the foreign table where the recipe_id is found.
-              model: 'recipe',
-              key: 'id',
-            },
-        },
     
         sequelize,
         timestamps: false,
