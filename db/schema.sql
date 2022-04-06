@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS (insert db saucy_db here)
+DROP DATABASE IF EXISTS saucy_db;
 
-CREATE DATABASE (insert db saucy_db here)
+CREATE DATABASE saucy_db;
