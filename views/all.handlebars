@@ -1,0 +1,54 @@
+<div class= ""> <!-- class header for the body-->
+    <div class="card-header col-md-12 text-center">
+        <h2><!-- class header for the header-->
+            💲Make Sauce Apart Of Your Life 💲
+        </h2>
+    </div>
+    {{#each sauce as |sauce|}}
+    <div class="sauce col-md-4">
+        <p>
+            Name of the sauce:
+            {{sauce.id}} <!---->
+            {{sauce.sauce_name}}<!--DOUBLE CHECK THE SAUCE REFERENCE HERE-->
+        </p>
+    </div>
+    <div class61"col-md-5">
+        <p>
+            Chef of the sauce:
+            {{sauce.}} <!--WE MAY NEED TO CONFIGURE A SEED FOR A CREATOR OF THE SAUCE-->
+        </p>
+    </div>
+    <div class= "col-md-5">
+        <p>
+            Ingredients Used:
+            {{ingredient.name}}
+        </p>
+    </div>
+    <div class="col-md-3"> <!--Instructions-->
+            🗒Instructions: {{#if sauce.instructions}} requires the steps of instructions to be followed. {{else}} No instructions for this sauce {{/if}}
+    </div>
+    <!--Form for adding new ingredients-->
+    <div class="add-sauce-ingredient">
+        <h2>
+            🍌Add your ingredients here:🍑
+        </h2>
+        <form class="new-ingredient-form">
+            <label for="ingredient-name">
+                Ingredient:
+            </label>
+            <br />
+            <textarea id="ingredient-name" name="ingredient-name" rows="2" cols="10">
+                {{ingredient-name}}
+            </textarea>
+            <br />
+            <label for="description">
+                Description
+            </label>
+            <br />
+            <textarea id="description" name="description" rows="8" cols="10">
+                {{description}}
+            </textarea>
+            <br />
+        </form>
+    </div>
+</div>
