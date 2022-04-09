@@ -2,28 +2,28 @@ const Recipe = require('../models/SauceRecipeModel');
 
 const recipeData = [
     {
-        "id":"1",
+        //"id":"1",
         "sauce_name":"Hot Sauce",
-        "ingredients":"Siracha",
-        "instructions":"Stir"
+        "ingredient_id":null,//"Siracha",
+        "instruction_id":2//"Stir"
     },
     {
-        "id":"2",
+        //"id":"2",
         "sauce_name":"Creamy Chedder",
-        "ingredients":"Cheese",
-        "instructions":"Melt"
+        "ingredient_id":null,//"Cheese",
+        "instruction_id":1//"Melt"
     },
     {
-        "id":"3",
+        //"id":"3",
         "sauce_name":"Honey Mustard",
-        "ingredients":["Honey","Mustard", "Brown Sugar"],
-        "instructions":"Whisp"
+        "ingredient_id":null,//["Honey","Mustard", "Brown Sugar"],
+        "instruction_id":2//"Whisp"
     },
     {
-        "id":"4",
+        //"id":"4",
         "sauce_name":"Smoked Butter",
-        "ingredients":["Liquid Smoke","Butter"],
-        "instructions":["Melt","Stir"]
+        "ingredient_id":null,//["Liquid Smoke","Butter"],
+        "instruction_id":1//["Melt","Stir"]
     }
 ]
 
