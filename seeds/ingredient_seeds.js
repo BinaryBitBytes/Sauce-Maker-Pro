@@ -1,4 +1,6 @@
+
 const Ingredient = require('../models/Ingredient');
+console.log('Test');
 
 const ingredientSeedData = [
     {

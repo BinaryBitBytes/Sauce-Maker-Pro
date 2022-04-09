@@ -1,6 +1,8 @@
 //Import model and datatypes
+
 const { Model, DataTypes } = require('sequelize');
 //Import sequelize
+
 const sequelize = require('../config/connection');
 
 class Ingredient extends Model {}
@@ -41,6 +43,9 @@ Ingredient.init(
     underscored: true,
     modelName: 'ingredient',
   }
+
 );
 
 module.exports = Ingredient;
+
+
