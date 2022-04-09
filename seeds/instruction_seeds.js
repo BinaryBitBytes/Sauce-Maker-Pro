@@ -5,13 +5,19 @@ const instructionseedData = [
     //Cook (ingredient) for (time) and mix into base: 2"
     {
         "name": "Mix",
-        "action": "Mix",
-        //^^ Action will be expanded to a full string to list out instructions to the user ^^
+        "action": "Mix" // Action will be expanded to a full string to list out instructions to the user ^^
     },
     {
-        "name": "Cook",
-        "action": "Cook",
-        //^^ Action will be expanded to a full string to list out instructions to the user ^^
+        "name": "Chop",
+        "action": "Chop" // Action will be expanded to a full string to list out instructions to the user ^^
+    },
+    {
+        "name": "Boil",
+        "action": "Boil" // Action will be expanded to a full string to list out instructions to the user ^^
+    },
+    {
+        "name": "PanFry",
+        "action": " PanFry" // Action will be expanded to a full string to list out instructions to the user ^^
     }
 ]
 
