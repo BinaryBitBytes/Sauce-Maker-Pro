@@ -16,14 +16,14 @@ IngredientAttribute.init(
     ingredient_id: {
       type: DataTypes.INTEGER,
       references: {
-        Model: "ingredient",
+        model: "Ingredient",
         key: "id"
       }
     },
     attribute_id: {
       type: DataTypes.INTEGER,
       references: {
-        Model: "attribute",
+        model: "Attribute",
         key: "id"
       }
     }

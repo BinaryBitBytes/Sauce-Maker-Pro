@@ -1,10 +1,10 @@
 const { Model , DataTypes } = require('sequelize'); // requiring sequelize
 const sequelize = require('../config/connection.js'); // This is where the DB connection happens.
-const ingredients = require('../models/') //! needs linked
-class sauceRecipe extends Model {} // creates a class and extends the class model for user
+// const ingredients = require('../models/') //! needs linked
+class SauceRecipe extends Model {} // creates a class and extends the class model for user
 
 
-sauceRecipe.init(
+SauceRecipe.init(
     {
     id: { // created an ID to hold the primary key
         type: DataTypes.INTEGER, // the id is an integer
@@ -42,8 +42,8 @@ sauceRecipe.init(
         freezeTableName: true, // does not allow sequelize to manipulate the table name
         underscored: true, // converts all camel cased to lower case and underscored columns
         timestamps: true, // creates a time stamp
-        modelName: 'sauceRecipe', // naming the model
+        modelName: 'SauceRecipe', // naming the model
     }
 );
 
-module.exports = sauceRecipe; //exporting the sauceRecipe model as a module
+module.exports = SauceRecipe; //exporting the sauceRecipe model as a module
