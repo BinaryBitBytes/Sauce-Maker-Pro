@@ -1,4 +1,4 @@
-[
+const recipeData = [
     {
         "id":"1",
         "sauce_name":"Hot Sauce",
@@ -24,3 +24,7 @@
         "instructions":["Melt","Stir"]
     }
 ]
+
+const seedRecipes = () => sauceRecipe.bulkCreate(recipeData);
+
+module.exports = seedRecipes;
