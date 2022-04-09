@@ -29,11 +29,12 @@ Ingredient.init(
         type: DataTypes.INTEGER,
         references: {
           // References the foreign table where the recipe_id is found.
-          model: 'recipe',
+          model: 'SauceRecipe',
           key: 'id',
         },
     },
-
+  },
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,
