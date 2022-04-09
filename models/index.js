@@ -4,9 +4,6 @@ const BaseIngredient = require('./BaseIngredient');
 const Ingredient = require('./Ingredient');
 const IngredientAttribute = require('./IngridientAttribute');
 const Instruction = require('./Instruction');
-const SauceRecipe = require('./SauceRecipeModel');
-
-// const BaseIngredientAttribute = require('./BaseIngredientAttribute)
 
 Attribute.belongsTo(Ingredient, { //Attribute belongsToMany Ingredients through IngredientAttribute
     foreignKey: 'Ingredient_id',
