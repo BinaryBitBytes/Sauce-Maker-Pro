@@ -16,10 +16,6 @@ SauceRecipe.init(
         type: DataTypes.STRING, // is a string //! BUT IS IT? IS IT A OBJECT OR A JSON?
         allowNull: false, // not allowed to be null
         },
-    ingredients: {
-        type: DataTypes.STRING, // is a string //! BUT IS IT? IS IT A OBJECT OR A JSON?
-        allowNull: false, // not allowed to be null
-        },
     instructions: {
         type: DataTypes.STRING, // is a string
         allowNull: false, // not allowed to be null
