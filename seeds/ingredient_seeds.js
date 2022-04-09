@@ -1,4 +1,4 @@
-[
+const ingredientSeedData = [
     {
         "name": "Mustard",
         "volume": 0.2,
@@ -31,3 +31,8 @@
     }
     
 ]
+
+const seedIngredients = () => Ingredient.bulkCreate(ingredientSeedData);
+
+
+module.exports = seedIngredients;
