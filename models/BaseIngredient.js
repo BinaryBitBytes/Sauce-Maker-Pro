@@ -18,7 +18,7 @@ BaseIngredient.init(
     attribute_id: {
         type: DataTypes.INTEGER,
         references: {
-            Model: 'Attribute',
+            model: 'Attribute',
             key: 'id'
         }
     }
