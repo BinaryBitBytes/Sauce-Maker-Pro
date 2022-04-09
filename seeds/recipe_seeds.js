@@ -1,3 +1,5 @@
+const Recipe = require('../models/sauceRecipeModel');
+
 const recipeData = [
     {
         "id":"1",
@@ -25,6 +27,6 @@ const recipeData = [
     }
 ]
 
-const seedRecipes = () => sauceRecipe.bulkCreate(recipeData);
+const seedRecipes = () => Recipe.bulkCreate(recipeData);
 
 module.exports = seedRecipes;

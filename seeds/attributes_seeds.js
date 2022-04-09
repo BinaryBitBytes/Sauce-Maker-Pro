@@ -1,3 +1,4 @@
+const Attribute = require('../models/Attributes');
 
 const attributeData = [
     {

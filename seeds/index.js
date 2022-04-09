@@ -1,6 +1,4 @@
 const sequelize = require('../config/connection');
-const { Attribute, BaseIngredient, Ingredient, Instruction, sauceRecipe } = require('../models');
-
 const attributeData = require('./attributes_seeds');
 const baseIngredientData = require('./baseIngredient_seeds.js');
 const ingredientData = require('./ingredient_seeds.js');

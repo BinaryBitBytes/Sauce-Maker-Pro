@@ -1,3 +1,5 @@
+const BaseIngredient = require('../models/BaseIngredient');
+
 const baseIngredientData =  [
     {
         "name": "Olive Oil",
@@ -15,6 +17,6 @@ const baseIngredientData =  [
 
 
 
-const seedBaseIngredients = () => Gallery.bulkCreate(seedBaseIngredients);
+const seedBaseIngredients = () => BaseIngredient.bulkCreate(baseIngredientData);
 
 module.exports = seedBaseIngredients;
