@@ -59,7 +59,7 @@ User.init(
         freezeTableName: true, // does not allow sequelize to manipulate the table name
         underscored: true, // converts all camel cased to lower case and underscored columns
         timestamps: true, // creates a time stamp
-        modelName: 'user', // naming the model
+        modelName: 'User', // naming the model
     }
 );
 
