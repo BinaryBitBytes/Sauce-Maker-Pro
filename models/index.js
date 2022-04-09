@@ -1,4 +1,5 @@
 //Import models
+const SauceRecipe = require('./sauceRecipeModel');
 const Attribute = require('./Attributes');
 const BaseIngredient = require('./BaseIngredient');
 const Ingredient = require('./Ingredient');
@@ -17,6 +18,16 @@ Attribute.belongsTo(Ingredient, { //Attribute belongsToMany Ingredients through 
 
 SauceRecipe.hasMany(Instruction, { //SauceRecipe hasMany Instructions
     foreignKey: 'Instruction_id',
+    onDelete: 'CASCADE'
+});
+
+Ingredient.hasMany(SauceRecipe, { //SauceRecipe hasMany Instructions
+    foreignKey: 'recipe_id', //!^^
+    onDelete: 'CASCADE'
+});
+
+SauceRecipe.belongsTo(Ingredient, { //Attribute belongsToMany Ingredients through IngredientAttribute
+    foreignKey: 'recipe_id', //! ^^
     onDelete: 'CASCADE'
 });
 
