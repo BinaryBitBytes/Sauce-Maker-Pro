@@ -27,16 +27,16 @@ const ingredientSeedData = [
         "recipe_id": 4
     },
     {
-        "id": 5,
+        "id": 8,
         "name": "Grape Jelly",
         "volume": 0.4,
-        "recipe_id": 5
+        "recipe_id": 1
     },
     {
-        "id": 6,
+        "id": 20,
         "name": "Chicken Stock",
         "volume": 0.8,
-        "recipe_id": 6
+        "recipe_id": 2
     }
     
 ]
