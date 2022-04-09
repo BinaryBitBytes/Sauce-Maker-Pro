@@ -1,3 +1,5 @@
+const Ingredient = require('../models/Ingredient');
+
 const ingredientSeedData = [
     {
         "name": "Mustard",
