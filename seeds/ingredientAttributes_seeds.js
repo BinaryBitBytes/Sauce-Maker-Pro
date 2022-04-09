@@ -1,3 +1,5 @@
+const IngredientAttribute = require('../models/IngridientAttribute');
+
 const ingredientAttributesData = [
     {
         "ingredient_id": 1,
