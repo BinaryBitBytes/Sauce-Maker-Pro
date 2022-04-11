@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const recipeData = await SauceRecipe.findAll({
-     include: [{ model: Ingredient, through: IngredientAttribute }]
+     
     });
 
     // Serialize data so the template can read it
