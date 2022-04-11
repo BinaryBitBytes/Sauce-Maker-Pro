@@ -20,6 +20,10 @@ SauceRecipe.init(
         type: DataTypes.INTEGER, // is a string
         allowNull: false, // not allowed to be null
     },
+    ingredient_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
     /*is_cold: { //
         type: DataTypes.BOOLEAN, // data type in the form of a boolean
         allowNull: true, // not allowed to be null

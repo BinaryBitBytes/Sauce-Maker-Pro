@@ -20,7 +20,7 @@ Instruction.init(
       allowNull: false,
     },
     action: {
-        type: Dataypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     // This references an ingredient id.

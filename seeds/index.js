@@ -16,17 +16,17 @@ const seedDatabase = async () => {
     
     await sequelize.sync({ force: true });
 
-    await recipeSeedData();
-
     await attributeData();
-  
+
     await baseIngredientData();
 
+    await recipeSeedData();
+  
     await ingredientData();
 
     await ingredientAttributesData();
 
-   // await recipeSeedData();
+  
 
 
   process.exit(0);
