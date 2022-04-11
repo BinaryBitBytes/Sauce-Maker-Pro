@@ -22,12 +22,12 @@ const Instruction = require('./Instruction');
  });
 
 SauceRecipe.hasMany(Instruction, { //SauceRecipe hasMany Instructions
-    foreignKey: 'instruction_id',
+    foreignKey: 'Instruction_id',
     onDelete: 'CASCADE'
 });
 
 Instruction.belongsTo(Ingredient, { //Instruction belongsTo SauceRecipe
-    foreignKey: 'ingredient_id',
+    foreignKey: 'Ingredient_id',
     onDelete: 'CASCADE'
 }); 
 
