@@ -2,15 +2,15 @@ const BaseIngredient = require('../models/BaseIngredient');
 
 const baseIngredientData =  [
     {
-        "name": "Olive Oil",
+        "base_ingredient_name": "Olive Oil",
         "attribute_id": 3
     },
     {
-        "name": "Yogurt",
+        "base_ingredient_name": "Yogurt",
         "attribute_id": 1
     },
     {
-        "name": "Gochujang",
+        "base_ingredient_name": "Gochujang",
         "attribute_id": 2
     }
 ];
