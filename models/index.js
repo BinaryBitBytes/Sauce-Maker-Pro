@@ -6,20 +6,18 @@ const Ingredient = require('./Ingredient');
 const IngredientAttribute = require('./IngridientAttribute');
 const Instruction = require('./Instruction');
 
-    Attribute.belongsToMany(Ingredient, {
+    Attribute.belongsTo(Ingredient, {
     // Define the third table needed to store the foreign keys
-    through: {
-      model: IngredientAttribute,
-      unique: false
-    },
+    foreignKey: 'ingredient_id',
+    onDelete: 'CASCADE'
    
   }); 
 
 
- Attribute.belongsTo(BaseIngredientAttribute, { //Attribute belongsToMany BaseIngredients through BaseIngredientAttribute
+ /*Attribute.belongsTo(BaseIngredientAttribute, { //Attribute belongsToMany BaseIngredients through BaseIngredientAttribute
     foreignKey: 'BaseIngredientAttribute_id',
     onDelete: 'CASCADE'
- });
+ });*/
 
 SauceRecipe.hasMany(Instruction, { //SauceRecipe hasMany Instructions
     foreignKey: 'instruction_id',
