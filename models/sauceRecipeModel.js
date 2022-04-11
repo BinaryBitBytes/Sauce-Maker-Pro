@@ -16,11 +16,15 @@ SauceRecipe.init(
         type: DataTypes.STRING, // is a string //! BUT IS IT? IS IT A OBJECT OR A JSON?
         allowNull: false, // not allowed to be null
         },
-    instructions: {
-        type: DataTypes.STRING, // is a string
+    instruction_id: {
+        type: DataTypes.INTEGER, // is a string
         allowNull: false, // not allowed to be null
     },
-    is_cold: { //
+    ingredient_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    /*is_cold: { //
         type: DataTypes.BOOLEAN, // data type in the form of a boolean
         allowNull: true, // not allowed to be null
     },
@@ -31,7 +35,7 @@ SauceRecipe.init(
     is_dry: { //
         type: DataTypes.BOOLEAN, // data type in the form of a boolean
         allowNull: true, // not allowed to be null
-    },
+    },*/
     },
     {
         sequelize, // implementing the sequelize connection

@@ -1,0 +1,39 @@
+mysql> show tables;
++--------------------+
+| Tables_in_saucy_db |
++--------------------+
+| attribute          |
+| baseingredient     |
+| ingredient         |
+| instruction        |
+| saucerecipe        |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> DROP TABLE ingredient;
+ERROR 3730 (HY000): Cannot drop table 'ingredient' referenced by a foreign key constraint 'attribute_ibfk_1' on table 'attribute'.
+mysql> DROP TABLE attribute;
+ERROR 3730 (HY000): Cannot drop table 'attribute' referenced by a foreign key constraint 'baseingredient_ibfk_1' on table 'baseingredient'.
+mysql> DROP TABLE baseingredient;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> DROP TABLE attribute;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> DROP TABLE ingredient;
+ERROR 3730 (HY000): Cannot drop table 'ingredient' referenced by a foreign key constraint 'instruction_ibfk_1' on table 'instruction'.
+mysql> DROP TABLE instruction;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DROP TABLE ingredient;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables;
++--------------------+
+| Tables_in_saucy_db |
++--------------------+
+| saucerecipe        |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql>
