@@ -6,35 +6,41 @@ const Ingredient = require('./Ingredient');
 const IngredientAttribute = require('./IngridientAttribute');
 const Instruction = require('./Instruction');
 
-Attribute.belongsTo(Ingredient, { //Attribute belongsToMany Ingredients through IngredientAttribute
-    foreignKey: 'Ingredient_id',
-    onDelete: 'CASCADE'
-});
+    Attribute.belongsToMany(Ingredient, {
+    // Define the third table needed to store the foreign keys
+    through: {
+      model: IngredientAttribute,
+      unique: false
+    },
+   
+  }); 
 
-//Attribute.belongsTo(BaseIngredientAttribute, { //Attribute belongsToMany BaseIngredients through BaseIngredientAttribute
-//    foreignKey: 'BaseIngredientAttribute_id',
-//    onDelete: 'CASCADE'
-//});
+
+ Attribute.belongsTo(BaseIngredientAttribute, { //Attribute belongsToMany BaseIngredients through BaseIngredientAttribute
+    foreignKey: 'BaseIngredientAttribute_id',
+    onDelete: 'CASCADE'
+ });
 
 SauceRecipe.hasMany(Instruction, { //SauceRecipe hasMany Instructions
-    foreignKey: 'Instruction_id',
+    foreignKey: 'instruction_id',
     onDelete: 'CASCADE'
 });
 
-Ingredient.hasMany(SauceRecipe, { //SauceRecipe hasMany Instructions
-    foreignKey: 'recipe_id', //!^^
+Instruction.belongsTo(Ingredient, { //Instruction belongsTo SauceRecipe
+    foreignKey: 'ingredient_id',
+    onDelete: 'CASCADE'
+}); 
+
+SauceRecipe.hasMany(Ingredient, { //SauceRecipe hasMany Instructions
+    foreignKey: 'ingredient_id', //!^^
     onDelete: 'CASCADE'
 });
 
-SauceRecipe.belongsTo(Ingredient, { //Attribute belongsToMany Ingredients through IngredientAttribute
+Ingredient.belongsTo(SauceRecipe, { //Attribute belongsToMany Ingredients through IngredientAttribute
     foreignKey: 'recipe_id', //! ^^
     onDelete: 'CASCADE'
 });
 
-Instruction.belongsTo(SauceRecipe, { //Instruction belongsTo SauceRecipe
-    foreignKey: 'SauceRecipe_id',
-    onDelete: 'CASCADE'
-});
 
 
 

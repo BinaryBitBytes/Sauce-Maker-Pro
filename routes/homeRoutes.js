@@ -1,17 +1,12 @@
 const router = require('express').Router();
-const { SauceRecipe, Ingredient } = require('../models');
+const { SauceRecipe, Ingredient, Attribute, IngredientAttribute } = require('../models');
 
 
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const recipeData = await SauceRecipe.findAll({
-      include: [
-        {
-          model: Ingredient,
-          attributes: ['name'],
-        },
-      ],
+     include: [{ model: Ingredient, through: IngredientAttribute }]
     });
 
     // Serialize data so the template can read it

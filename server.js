@@ -3,6 +3,7 @@ const express = require('express');
 // Import express-session
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const routes = require('./routes');
 
 const sequelize = require('./config/connection');
 
@@ -23,10 +24,15 @@ const hbs = exphbs.create({ /*helpers*/ });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+app.use(routes);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-sequelize.sync({ force: false }).then(() => {
+
+
+
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
