@@ -12,7 +12,7 @@ BaseIngredient.init(
       primaryKey: true,
       autoIncrement: true
     },
-    baseIngredient_name: {
+    base_ingredient_name: {
       type: DataTypes.STRING
     },
     attribute_id: {
