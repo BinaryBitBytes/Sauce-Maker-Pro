@@ -37,17 +37,9 @@ Ingredient.hasOne(Instruction, {
 
 Instruction.belongsTo(Ingredient, { //Instruction belongsTo SauceRecipe
     foreignKey: 'ingredient_id',
+
     onDelete: 'CASCADE'
-}); 
-
-
-
-
-
-
-
-
-
+});
 
 // Exports models with fk associations
 module.exports = { Attribute, BaseIngredient, Ingredient, IngredientAttribute, Instruction, SauceRecipe };
