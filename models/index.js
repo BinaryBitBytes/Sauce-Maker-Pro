@@ -20,17 +20,7 @@ const Instruction = require('./Instruction');
  });*/
 
 SauceRecipe.hasMany(Instruction, { //SauceRecipe hasMany Instructions
-    foreignKey: 'Instruction_id',
-    onDelete: 'CASCADE'
-});
-
-Instruction.belongsTo(Ingredient, { //Instruction belongsTo SauceRecipe
-    foreignKey: 'Ingredient_id',
-    onDelete: 'CASCADE'
-}); 
-
-SauceRecipe.hasMany(Ingredient, { //SauceRecipe hasMany Instructions
-    foreignKey: 'ingredient_id', //!^^
+    foreignKey: 'ingredient_id',
     onDelete: 'CASCADE'
 });
 
@@ -38,6 +28,19 @@ Ingredient.belongsTo(SauceRecipe, { //Attribute belongsToMany Ingredients throug
     foreignKey: 'recipe_id', //! ^^
     onDelete: 'CASCADE'
 });
+
+SauceRecipe.hasMany(Ingredient, { //SauceRecipe hasMany Ingredients
+    foreignKey: 'recipe_id', //!^^
+    onDelete: 'CASCADE'
+});
+
+Instruction.belongsTo(Ingredient, { //Instruction belongsTo SauceRecipe
+    foreignKey: 'ingredient_id',
+    onDelete: 'CASCADE'
+}); 
+
+
+
 
 
 

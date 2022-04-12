@@ -1,4 +1,4 @@
-const IngredientAttribute = require('../models/IngridientAttribute');
+const IngredientAttribute = require('../models/IngredientAttribute');
 
 const ingredientAttributesData = [
     {

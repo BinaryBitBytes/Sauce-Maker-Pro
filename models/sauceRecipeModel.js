@@ -19,10 +19,12 @@ SauceRecipe.init(
     instruction_id: {
         type: DataTypes.INTEGER, // is a string
         allowNull: false, // not allowed to be null
+        onDelete: "SET NULL"
     },
     ingredient_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        onDelete: "SET NULL"
     },
     /*is_cold: { //
         type: DataTypes.BOOLEAN, // data type in the form of a boolean

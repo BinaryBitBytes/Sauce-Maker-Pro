@@ -11,22 +11,28 @@ const ingredientData = require('./ingredient_seeds.js');
 
 const ingredientAttributesData = require('./ingredientAttributes_seeds');
 
+const instructionSeedData = require('./instruction_seeds');
+
 
 const seedDatabase = async () => {
     
     await sequelize.sync({ force: true });
 
+    await recipeSeedData();
+    
+    await ingredientData();
+
     await attributeData();
 
-    await baseIngredientData();
-
-    await recipeSeedData();
-  
-    await ingredientData();
+    await instructionSeedData();
 
     await ingredientAttributesData();
 
+    await baseIngredientData();
+
+    
   
+    
 
 
   process.exit(0);
