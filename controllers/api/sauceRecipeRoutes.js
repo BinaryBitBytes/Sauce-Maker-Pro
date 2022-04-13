@@ -1,10 +1,12 @@
 const router = require('express').Router();
-const { SauceRecipe, Instruction, Ingredient } = require('../../models');
+const { SauceRecipe, Ingredient, BaseIngredient } = require('../../models');
 
 // GET all sauceRecipes
 router.get('/', async (req, res) => {
     try {
-      const sauceRecipeData = await SauceRecipe.findAll();
+      const sauceRecipeData = await SauceRecipe.findAll({
+        include: [{model: BaseIngredient}, { model: Ingredient }],
+      });
       res.status(200).json(sauceRecipeData);
     } catch (err) {
       res.status(500).json(err);
@@ -14,7 +16,12 @@ router.get('/', async (req, res) => {
   // GET a single sauceRecipe
   router.get('/:id', async (req, res) => {
     try {
-      const sauceRecipeData = await SauceRecipe.findByPk(req.params.id);
+      const sauceRecipeData = await SauceRecipe.findByPk(req.params.id,{
+        include: [
+          {model: BaseIngredient, attributes: ['id','base_ingredient_name','recipe_id']},
+          {model: Ingredient, attributes: ['id','name','volume','recipe_id']}
+                  ],
+      });
       if (!sauceRecipeData) {
         res.status(404).json({ message: 'No sauceRecipe found with this id!' });
         return;

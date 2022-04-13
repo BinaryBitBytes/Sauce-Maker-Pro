@@ -3,16 +3,36 @@
         <h2><!-- class header for the header-->
             💲Make Sauce Apart Of Your Life 💲
         </h2>
+
     </div>
-    {{#each recipes as |recipe|}}
+    
+    {{!-- {{#each recipes as |recipe|}}
     <div class="sauce col-md-4">
-        <p>
-            Name of the sauce:
-            {{recipe.id}} <!---->
-            {{recipe.sauce_name}}<!--DOUBLE CHECK THE SAUCE REFERENCE HERE-->
-        </p>
+        <div>
+            <p>Name of the sauce:
+                {{recipe.id}} 
+                {{recipe.sauce_name}}<!--DOUBLE CHECK THE SAUCE REFERENCE HERE-->
+            </p> --}}
+            <!-- For each card, the card-details partial is used to render the card data -->
+            {{#each recipes as |recipe|}}
+            {{> recipe-details}}
+            {{/each}}
+            {{!-- <div class="flip-card">
+            <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h4 id="card-1-activity-name">Not Enough Activities</h4>
+            </div>
+            <div class="flip-card-back">
+                <p id="card-1-activity-address">123 Activity Address Ln, Activityville, AA, 12345</p>
+                <a id="card-1-activity-phoneNumber"></a>
+                <a id="card-1-activity-website">Website</a>
+            </div>
+            </div>
+            </div> --}}
+
+        </div>
     </div>
-    {{/each}}
+    {{!-- {{/each}} --}}
     {{!-- <div class61"col-md-5">
        <!-- <p>
             Chef of the sauce:
