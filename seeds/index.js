@@ -3,6 +3,8 @@ const sequelize = require('../config/connection');
 
 const attributeData = require('./attributes_seeds');
 
+const baseAttributeData = require('./baseAttribute_seeds');
+
 const recipeSeedData = require('./recipe_seeds');
 
 const baseIngredientData = require('./baseIngredient_seeds.js');
@@ -18,7 +20,7 @@ const seedDatabase = async () => {
     
     await sequelize.sync({ force: true });
 
-    await recipeSeedData();
+    await recipeSeedData();    
     
     await ingredientData();
 
@@ -29,6 +31,8 @@ const seedDatabase = async () => {
     await ingredientAttributesData();
 
     await baseIngredientData();
+
+    await baseAttributeData();
 
     
   
