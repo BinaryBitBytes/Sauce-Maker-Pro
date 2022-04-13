@@ -1,10 +1,12 @@
 const router = require('express').Router();
-const { BaseIngredient, Attribute } = require('../../models');
+const { BaseIngredient, BaseAttribute } = require('../../models');
 
 // GET all baseIngredients
 router.get('/', async (req, res) => {
     try {
-      const baseIngredientData = await BaseIngredient.findAll();
+      const baseIngredientData = await BaseIngredient.findAll({
+        include: [{model: BaseAttribute}],
+      });
       res.status(200).json(baseIngredientData);
     } catch (err) {
       res.status(500).json(err);

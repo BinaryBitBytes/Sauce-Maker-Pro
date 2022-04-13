@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { SauceRecipe, Instruction, Ingredient } = require('../../models');
+const { SauceRecipe, Instruction, Ingredient, BaseIngredient } = require('../../models');
 
 // GET all sauceRecipes
 router.get('/', async (req, res) => {
     try {
       const sauceRecipeData = await SauceRecipe.findAll({
-        include: [{ model: Ingredient }],
+        include: [{model: BaseIngredient}, { model: Ingredient }],
       });
       res.status(200).json(sauceRecipeData);
     } catch (err) {
