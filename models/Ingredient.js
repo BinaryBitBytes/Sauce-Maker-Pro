@@ -34,6 +34,7 @@ Ingredient.init(
           model: 'SauceRecipe',
           key: 'id',
         },
+        onDelete: "SET NULL"
     },
   },
   {

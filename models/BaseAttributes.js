@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class BaseIngredient extends Model {}
+class BaseAttribute extends Model { }
 
-BaseIngredient.init(
+BaseAttribute.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -12,27 +12,26 @@ BaseIngredient.init(
       primaryKey: true,
       autoIncrement: true
     },
-    base_ingredient_name: {
+    baseAttribute_name: {
       type: DataTypes.STRING
     },
-    // This references a recipe object stored in the database.
-    recipe_id: {
+    base_ingredient_id: {
       type: DataTypes.INTEGER,
       references: {
         // References the foreign table where the recipe_id is found.
-        model: 'SauceRecipe',
+        model: 'baseIngredient',
         key: 'id',
       },
-      onDelete: "SET NULL"
-  }
+    
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'baseIngredient',
+    modelName: 'baseAttribute',
   }
 );
 
-module.exports = BaseIngredient;
+module.exports = BaseAttribute;

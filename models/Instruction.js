@@ -31,6 +31,7 @@ Instruction.init(
             model: 'Ingredient',
             key: 'id',
         },
+        onDelete: "SET NULL"
     },
     // This references and ingredient time used for cooking instructions.
     //ingredient_time: {

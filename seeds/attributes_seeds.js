@@ -2,13 +2,16 @@ const Attribute = require('../models/Attributes');
 
 const attributeData = [
     {
-        "attribute_name": "sweet"
+        "attribute_name": "sweet",
+        "ingredient_id": 1
     },
     {
-        "attribute_name": "spicy"
+        "attribute_name": "spicy",
+        "ingredient_id": 2
     },
     {
-        "attribute_name": "salty"
+        "attribute_name": "salty",
+        "ingredient_id": 3
     }
 ];
 
