@@ -6,6 +6,17 @@ const Ingredient = require('./Ingredient');
 const IngredientAttribute = require('./IngredientAttribute');
 const Instruction = require('./Instruction');
 
+//Sauce Recipes have one base ingredient.
+SauceRecipe.hasOne(BaseIngredient, {
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE'
+});
+
+BaseIngredient.belongsTo(SauceRecipe,{
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE'
+})
+
 Attribute.belongsTo(Ingredient, {
 // Define the third table needed to store the foreign keys
     foreignKey: 'ingredient_id',
@@ -31,7 +42,7 @@ Ingredient.belongsTo(SauceRecipe, { //Attribute belongsToMany Ingredients throug
 
 Ingredient.hasOne(Instruction, {
     foreignKey: 'ingredient_id',
-    // When we delete a Reader, make sure to also delete the associated Library Card.
+    // When we delete a Reader, make sure to also delete the associated Library Card. 'n stuff
     onDelete: 'CASCADE',
   });
 
