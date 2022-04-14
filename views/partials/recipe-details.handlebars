@@ -2,14 +2,21 @@
   <!-- The contents of this card links to the gallery page using the gallery ID -->
   <a href="/api/sauceRecipes/{{id}}">
     <!-- The card contains the gallery name as the card header -->
-    <header>{{sauce_name}}</header>
+    <h2>{{sauce_name}}</h2>
   </a>
   <section class="card-body">
-        <h2>
+
+          <h2 class="card-base-ingredient">Base Ingredient:</h2>
+          <a href="#">
+          {{baseIngredient.base_ingredient_name}}
+          </a>
+          <h2 class="card-ingredient">Ingredients:</h2>
           {{#each Ingredients as |Ingredient|}}
-          {{name}}
+          <a href="#">
+          <p>{{name}}</p>
+          </a>
           {{/each}}
-        </h2>
+        
 
       </a>
     </section>
