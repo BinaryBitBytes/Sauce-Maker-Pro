@@ -1,30 +1,30 @@
-<head>
-  <meta charset="UTF-8">
-  <title>Sauce Maker Pro</title>
-  <link rel="stylesheet" href="/main.css">
-</head>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sauce Maker Pro</title>
+    <link rel="stylesheet" href="/main.css">
+  </head>
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        🍲👨‍🍳🈲 Sauce Maker Pro! 🍲👨‍🍳🈲
-      </h1>
+  <body>
+    <div class="flex-column justify-space-around">
+      <header class="display-flex justify-space-between align-center p-2">
+        <h1>
+          🍲👨‍🍳🈲 Sauce Maker Pro! 🍲👨‍🍳🈲
+        </h1>
 
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
+        <nav>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+          <a href="/profile">profile</a> |
+          <button class="no-button" id="logout">logout</button>
+          {{else}}
+          <a href="/login">login</a>
+          {{/if}}
+        </nav>
+      </header>
       <main class="container container-fluid mt-5">
         {{{ body }}}
       </main>
-  </div>
+    </div>
   </body>
-
 </html>

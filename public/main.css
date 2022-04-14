@@ -1,3 +1,22 @@
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+    background-color: #ba9b8e;
+}
+
+nav {
+    line-height: 1;
+}
+
+body {
+    margin: 0;
+}
+
 h1 {
-    color:rebeccapurple;
+    color: #6F313C;
 }
