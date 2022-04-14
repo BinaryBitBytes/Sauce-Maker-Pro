@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { SauceRecipe, Ingredient, BaseIngredient, Attribute, IngredientAttribute } = require('../models');
+const { SauceRecipe, Ingredient, BaseIngredient } = require('../models');
 
 
 router.get('/', async (req, res) => {
@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+    console.log(recipes);
 
     // Pass serialized data and session flag into template
     res.render('all', { 

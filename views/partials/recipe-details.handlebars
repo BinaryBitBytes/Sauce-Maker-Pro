@@ -4,22 +4,13 @@
     <!-- The card contains the gallery name as the card header -->
     <header>{{sauce_name}}</header>
   </a>
-    <section class="cardBody">
-      <!-- The contents of this card links to the gallery page using the gallery ID -->
-      <a href="api/ingredients/{{id}}">
-        <!-- The card contains the gallery name as the card header -->
+  <section class="card-body">
         <h2>
-          {{#each recipe.Ingredients as |Ingredient|}}
-          <a href="/api/ingredients/{{id}}" >
+          {{#each Ingredients as |Ingredient|}}
           {{name}}
-          </a>
           {{/each}}
         </h2>
-        <!-- The card contains the first painting of the gallery -->
-        {{!-- <img
-          src="/images/{{paintings.0.filename}}"
-          alt="{{paintings.0.description}}"
-        /> --}}
+
       </a>
     </section>
     <!-- The card contains the first painting of the gallery -->
