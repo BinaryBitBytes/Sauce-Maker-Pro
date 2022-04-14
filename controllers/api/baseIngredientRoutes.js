@@ -16,12 +16,18 @@ router.get('/', async (req, res) => {
   // GET a single baseIngredient
   router.get('/:id', async (req, res) => {
     try {
-      const baseIngredientData = await BaseIngredient.findByPk(req.params.id);
+      const baseIngredientData = await BaseIngredient.findByPk(req.params.id,
+        {
+          include: [{model: BaseAttribute}],
+        });
       if (!baseIngredientData) {
         res.status(404).json({ message: 'No baseIngredient found with this id!' });
         return;
       }
-      res.status(200).json(baseIngredientData);
+      const baseIngredient = baseIngredientData.get({ plain: true });
+      //res.status(200).json(baseIngredientData);
+     console.log(baseIngredient);
+      res.render('baseIngredient', baseIngredient);
     } catch (err) {
       res.status(500).json(err);
     }

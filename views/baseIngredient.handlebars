@@ -1,0 +1,41 @@
+
+
+<section class="base-ingredient card" style="margin:auto;">
+  <div class="baseIngredientDetails">
+
+    <h3 style="text-align: center; background-color: rebeccapurple; color:white">{{base_ingredient_name}}</h3>
+    
+    {{#each baseAttributes as |attribute|}}
+    <h3 class="card-body">{{baseAttribute_name}}</h3>
+    {{/each}}
+  </div>
+</section>
+
+
+
+
+{{!-- <section class="card">
+  <!-- The contents of this card links to the gallery page using the gallery ID -->
+  <a href="/api/sauceRecipes/{{id}}">
+    <!-- The card contains the gallery name as the card header -->
+    <h2>{{sauce_name}}</h2>
+  </a>
+  <section class="card-body">
+
+          <h2 class="card-base-ingredient">Base Ingredient:</h2>
+          <a href="/api/baseIngredients/{{id}}">
+          {{baseIngredient.base_ingredient_name}}
+          </a>
+          <h2 class="card-ingredient">Ingredients:</h2>
+          {{#each Ingredients as |Ingredient|}}
+          <a href="#">
+          <p>{{name}}</p>
+          </a>
+          {{/each}}
+        
+
+      </a>
+    </section>
+    <!-- The card contains the first painting of the gallery -->
+    <!-- <img src="/images/{{paintings.[0].filename}}" alt="{{paintings.[0].description}}"> -->
+</section> --}}
