@@ -3,13 +3,16 @@
   <a href="/api/sauceRecipes/{{id}}">
     <!-- The card contains the gallery name as the card header -->
     <header>{{sauce_name}}</header>
-    <section class="card">
+  </a>
+    <section class="cardBody">
       <!-- The contents of this card links to the gallery page using the gallery ID -->
-      <a href="/sauceRecipes/{{id}}">
+      <a href="api/ingredients/{{id}}">
         <!-- The card contains the gallery name as the card header -->
         <h2>
           {{#each recipe.Ingredients as |Ingredient|}}
-          {{>Ingredient.name}}
+          <a href="/api/ingredients/{{id}}" >
+          {{name}}
+          </a>
           {{/each}}
         </h2>
         <!-- The card contains the first painting of the gallery -->
@@ -21,5 +24,4 @@
     </section>
     <!-- The card contains the first painting of the gallery -->
     <!-- <img src="/images/{{paintings.[0].filename}}" alt="{{paintings.[0].description}}"> -->
-  </a>
 </section>

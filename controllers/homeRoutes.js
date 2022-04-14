@@ -1,11 +1,15 @@
 const router = require('express').Router();
-const { SauceRecipe, Ingredient, Attribute, IngredientAttribute } = require('../models');
+const { SauceRecipe, Ingredient, BaseIngredient, Attribute, IngredientAttribute } = require('../models');
 
 
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const recipeData = await SauceRecipe.findAll({
+      include: [
+        {model: BaseIngredient, attributes: ['id','base_ingredient_name','recipe_id']},
+        {model: Ingredient, attributes: ['id','name','volume','recipe_id']}
+                ],
      
     });
 
