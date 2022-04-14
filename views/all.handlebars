@@ -1,75 +1,11 @@
-<div class= ""> <!-- class header for the body-->
     <div class="card-header col-md-12 text-center">
         <h2><!-- class header for the header-->
             💲Make Sauce Apart Of Your Life 💲
         </h2>
-
     </div>
-    
-    {{!-- {{#each recipes as |recipe|}}
-    <div class="sauce col-md-4">
-        <div>
-            <p>Name of the sauce:
-                {{recipe.id}} 
-                {{recipe.sauce_name}}<!--DOUBLE CHECK THE SAUCE REFERENCE HERE-->
-            </p> --}}
-            <!-- For each card, the card-details partial is used to render the card data -->
+    <div>
             {{#each recipes as |recipe|}}
             {{> recipe-details}}
             {{/each}}
-            {{!-- <div class="flip-card">
-            <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <h4 id="card-1-activity-name">Not Enough Activities</h4>
-            </div>
-            <div class="flip-card-back">
-                <p id="card-1-activity-address">123 Activity Address Ln, Activityville, AA, 12345</p>
-                <a id="card-1-activity-phoneNumber"></a>
-                <a id="card-1-activity-website">Website</a>
-            </div>
-            </div>
-            </div> --}}
-
-        </div>
     </div>
-    {{!-- {{/each}} --}}
-    {{!-- <div class61"col-md-5">
-       <!-- <p>
-            Chef of the sauce:
-            {{sauce.}} <!--WE MAY NEED TO CONFIGURE A SEED FOR A CREATOR OF THE SAUCE
-        </p> -->
-    </div>
-    <div class= "col-md-5">
-        <p>
-            Ingredients Used:
-            {{ingredient.name}}
-        </p>
-    </div>
-    <div class="col-md-3"> <!--Instructions-->
-            🗒Instructions: {{#if sauce.instructions}} requires the steps of instructions to be followed. {{else}} No instructions for this sauce {{/if}}
-    </div>
-    <!--Form for adding new ingredients-->
-    <div class="add-sauce-ingredient">
-        <h2>
-            🍌Add your ingredients here:🍑
-        </h2>
-        <form class="new-ingredient-form">
-            <label for="ingredient-name">
-                Ingredient:
-            </label>
-            <br />
-            <textarea id="ingredient-name" name="ingredient-name" rows="2" cols="10">
-                {{ingredient-name}}
-            </textarea>
-            <br />
-            <label for="description">
-                Description
-            </label>
-            <br />
-            <textarea id="description" name="description" rows="8" cols="10">
-                {{description}}
-            </textarea>
-            <br />
-        </form>
-    </div>
-</div> --}} 
+   
