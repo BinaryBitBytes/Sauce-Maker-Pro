@@ -1,11 +1,13 @@
-<section class="ingredient">
+
+
+<section class="ingredient card" style="margin:auto;">
   <div class="ingredientDetails">
+
+    <h3 style="text-align: center; background-color: rebeccapurple; color:white">{{base_ingredient_name}}</h3>
     
-    
-    <h3>{{name}}</h3>
-    
-    <h4> {{volume}} </h4>
-    
-    {{!-- <p>By: {{painting.artist}}</p> --}}
+    {{#each baseAttributes as |attribute|}}
+    <h3 class="card-body">{{baseAttribute_name}}</h3>
+    {{/each}}
   </div>
 </section>
+
