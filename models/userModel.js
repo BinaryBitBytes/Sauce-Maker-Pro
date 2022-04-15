@@ -35,14 +35,14 @@ User.init(
             length: [8], // password requirement is 8 characters in length
         },
     },
-    signed_in: { //stores if the user is signed in or not
-        type: DataTypes.BOOLEAN, // data type in the form of a boolean
-        allowNull: false, // not allowed to be null
-    },
+    // signed_in: { //stores if the user is signed in or not
+    //     type: DataTypes.BOOLEAN, // data type in the form of a boolean
+    //     allowNull: false, // not allowed to be null
+    // },
     last_sign_in: { //keeping track of the last time the user signed in
         type: DataTypes.DATE, // this data type is a date
         allowNull: true, // allowed to be null
-        },
+        }
     },
     {
         hooks: { // created before hooks of the lifecycle of the users password

@@ -1,0 +1,17 @@
+<section class="recipe">
+  <div class="recipeDetails">
+    
+    
+    <h3>{{recipe.sauce_name}}</h3>
+    
+    {{#each recipe.Ingredients as |ingredient|}}
+    <p>
+      <a href="/api/ingredients/{{id}}">
+      {{name}}
+      </a>
+    </p>
+    {{/each}}
+    
+    {{!-- <p>By: {{painting.artist}}</p> --}}
+  </div>
+</section>
