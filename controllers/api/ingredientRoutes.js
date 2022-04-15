@@ -16,7 +16,13 @@ router.get('/', async (req, res) => {
   // GET a single ingredient
   router.get('/:id', async (req, res) => {
     try {
-      const ingredientData = await Ingredient.findByPk(req.params.id);
+      const ingredientData = await Ingredient.findByPk(req.params.id, {
+
+        include: [
+          {model: Instruction, attributes: ['id', 'name', 'action', 'ingredient_id']}
+        ],
+
+      });
       if (!ingredientData) {
         res.status(404).json({ message: 'No ingredient found with this id!' });
         return;
