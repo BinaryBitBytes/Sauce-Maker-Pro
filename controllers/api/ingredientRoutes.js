@@ -21,7 +21,9 @@ router.get('/', async (req, res) => {
         res.status(404).json({ message: 'No ingredient found with this id!' });
         return;
       }
-      res.status(200).json(ingredientData);
+      // res.status(200).json(ingredientData);
+      const ingredient = ingredientData.get({ plain: true });
+      res.render('ingredient', {ingredient})
     } catch (err) {
       res.status(500).json(err);
     }
