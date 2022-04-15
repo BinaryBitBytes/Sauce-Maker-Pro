@@ -74,3 +74,27 @@ h2{
    flex-flow: row wrap;
    justify-content: center;
 }
+#loginDiv {
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 12px;
+    margin: 20vh auto;
+    padding:20px;
+    background-color: lightgray;
+    box-shadow: 5px 5px 10px gray;
+}
+#submit {
+    margin-top: 20px;
+    background-color: lightblue;
+    border-radius:8px;
+    
+}
+#signUpDiv {
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 12px;
+    margin: 20vh auto;
+    padding:20px;
+    background-color: lightgray;
+    box-shadow: 5px 5px 10px gray;
+}
