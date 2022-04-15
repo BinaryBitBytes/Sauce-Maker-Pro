@@ -2,15 +2,15 @@ const BaseAttribute = require('../models/BaseAttributes');
 
 const baseAttributeData = [
     {
-        "base_attribute_name": "sweet",
+        "baseAttribute_name": "sweet",
         "base_ingredient_id": 1
     },
     {
-        "base_attribute_name": "spicy",
+        "baseAttribute_name": "spicy",
         "base_ingredient_id": 2
     },
     {
-        "base_attribute_name": "salty",
+        "baseAttribute_name": "salty",
         "base_ingredient_id": 3
     }
 ];
