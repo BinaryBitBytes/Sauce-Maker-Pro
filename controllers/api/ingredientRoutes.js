@@ -6,7 +6,7 @@ const { getAttributes } = require('../../models/sauceRecipeModel');
 router.get('/', async (req, res) => {
     try {
       const ingredientData = await Ingredient.findAll({
-        include: [{ model: Attributes}],
+        include: [{ model: Ingredient}],
       });
       res.status(200).json(ingredientData);
     } catch (err) {
