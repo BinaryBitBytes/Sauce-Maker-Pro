@@ -29,6 +29,10 @@ router.get('/', async (req, res) => {
 
 router.get('/login', (req, res) => res.render('login'));
 router.get('/signUp', (req, res) => res.render('signUp'));
+router.get('/createsauce', (req, res) => res.render('createSauce',
+{
+  logged_in: req.session.logged_in 
+}));
 
 
 

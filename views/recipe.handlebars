@@ -1,17 +1,31 @@
-<section class="recipe">
-  <div class="recipeDetails">
-    
-    
-    <h3>{{recipe.sauce_name}}</h3>
-    
+<section class="recipe" style="display: flex; flex-flow: column;
+    align-items: center;
+    justify-content: center;">
+
+  <div class="recipeDetails" id="print-id" style="margin: auto; width: 200px">
+
+
+    <h3 style="background-color: rebeccapurple; color:white">{{recipe.sauce_name}}</h3>
+
+    <h3 style="background-color: burlywood;">Base Ingredient:</h3>
+    <a href="/api/baseIngredients/{{id}}" >
+      {{recipe.baseIngredient.base_ingredient_name}}
+    </a>
+    <h3 style="background-color:aquamarine ;">Ingredients:</h3>
     {{#each recipe.Ingredients as |ingredient|}}
-    <p>
+    <p style="">
       <a href="/api/ingredients/{{id}}">
-      {{name}}
+        {{name}}
       </a>
+      <p>Volume ratio: {{volume}}</p>
+      <p>Instruction: {{Instruction.name}}</p>
     </p>
     {{/each}}
-    
-    {{!-- <p>By: {{painting.artist}}</p> --}}
+
   </div>
+  <button style="ma" type="button" onclick="printJS('print-id', 'html')">
+    Print Recipe
+  </button>
+  <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+
 </section>
