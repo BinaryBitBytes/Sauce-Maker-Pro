@@ -19,7 +19,9 @@ router.get('/', async (req, res) => {
       const sauceRecipeData = await SauceRecipe.findByPk(req.params.id,{
         include: [
           {model: BaseIngredient},
-          {model: Ingredient},
+          {model: Ingredient,
+            include: [{model:Instruction}]
+          },
                   ],
       });
       if (!sauceRecipeData) {
