@@ -4,7 +4,6 @@ const Attribute = require('./Attributes');
 const BaseAttribute = require('./BaseAttributes');
 const BaseIngredient = require('./BaseIngredient');
 const Ingredient = require('./Ingredient');
-const IngredientAttribute = require('./IngredientAttribute');
 const Instruction = require('./Instruction');
 const User = require('./userModel');
 
@@ -66,4 +65,4 @@ Instruction.belongsTo(Ingredient, { //Instruction belongsTo SauceRecipe
 });
 
 // Exports models with fk associations
-module.exports = { Attribute, BaseAttribute, BaseIngredient, Ingredient, IngredientAttribute, Instruction, SauceRecipe, User };
+module.exports = { Attribute, BaseAttribute, BaseIngredient, Ingredient, Instruction, SauceRecipe, User };

@@ -3,10 +3,16 @@
 <section class="ingredient card" style="margin:auto;">
   <div class="ingredientDetails">
 
-    <h3 style="text-align: center; background-color: rebeccapurple; color:white">{{ingredient_name}}</h3>
+    <h3 style="text-align: center; background-color: rebeccapurple; color:white">{{name}}</h3>
     
-    {{#each baseAttributes as |attribute|}}
-    <h3 class="card-body">{{baseAttribute_name}}</h3>
+    <h3>{{volume}}</h3>
+
+
+    
+    <h3>{{Instruction.action}}</h3>
+
+    {{#each attributes as |attribute|}}
+    <h3 class="card-body">{{attribute_name}}</h3>
     {{/each}}
   </div>
 </section>
