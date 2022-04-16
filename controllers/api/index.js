@@ -8,6 +8,8 @@ const instructionRoutes = require('./instructionRoutes');
 const sauceRecipeRoutes = require('./sauceRecipeRoutes');
 const userModelRoutes = require('./userModelRoutes');
 const { route } = require('./ingredientRoutes');
+const loginRoutes = require('./loginRoutes');
+const logoutRoutes = require('./logoutRoutes');
 
 router.use('/attributes', attributeRoutes);
 router.use('/baseAttributes', baseAttributeRoutes);
@@ -17,5 +19,6 @@ router.use('/ingredientAttributes', ingredientAttributesRoutes);
 router.use('/instructions', instructionRoutes);
 router.use('/sauceRecipes', sauceRecipeRoutes);
 router.use('/users', userModelRoutes);
-
+router.use('/login', loginRoutes);
+router.use('/logout', logoutRoutes);
 module.exports = router;

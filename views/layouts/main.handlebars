@@ -14,21 +14,26 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a href="/createSauce">Create Sauce</a> |
+        <a href="#" id="logout" >Logout</a>
         {{else}}
-        <a href="/login">login</a>
         <a href="/signUp">Sign Up</a>
+        <a href="/login">Login</a>
+      
         {{/if}}
         <a href="/">Home</a>
-        <a href="#">Create New Sauce</a>
-        <a href="#">Delete Sauce</a>
+        {{!-- <a href="#">Create Sauce</a> --}}
+        
       </nav>
     </header>
       <main class="container container-fluid mt-5">
         {{{ body }}}
       </main>
   </div>
+
+  {{#if logged_in}}
+  <script src="logout.js"></script>
+  {{/if}} 
   </body>
 
 </html>
