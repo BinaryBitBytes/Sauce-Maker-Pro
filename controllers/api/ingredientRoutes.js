@@ -6,7 +6,7 @@ const { getAttributes } = require('../../models/sauceRecipeModel');
 router.get('/', async (req, res) => {
     try {
       const ingredientData = await Ingredient.findAll({
-        include: [{ model: Ingredient}],
+        include: [{ model: Instruction}, {model: Attribute}],
       });
       res.status(200).json(ingredientData);
     } catch (err) {
@@ -17,14 +17,17 @@ router.get('/', async (req, res) => {
   // GET a single ingredient
   router.get('/:id', async (req, res) => {
     try {
-      const ingredientData = await Ingredient.findByPk(req.params.id);
+      const ingredientData = await Ingredient.findByPk(req.params.id, {
+            include: [{ model: Instruction}, {model: Attribute}],
+      });
       if (!ingredientData) {
         res.status(404).json({ message: 'No ingredient found with this id!' });
         return;
       }
       // res.status(200).json(ingredientData);
       const ingredient = ingredientData.get({ plain: true });
-      res.render('ingredient', {ingredient})
+      console.log(ingredient);
+      res.render('ingredient', ingredient)
     } catch (err) {
       res.status(500).json(err);
     }
