@@ -12,7 +12,12 @@ const baseAttributeData = [
     {
         "baseAttribute_name": "salty",
         "base_ingredient_id": 3
-    }
+    },
+    {
+        "baseAttribute_name": "umami",
+        "base_ingredient_id": 4
+    },
+
 ];
 
 
