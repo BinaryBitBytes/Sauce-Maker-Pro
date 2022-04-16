@@ -11,8 +11,6 @@ const baseIngredientData = require('./baseIngredient_seeds.js');
 
 const ingredientData = require('./ingredient_seeds.js');
 
-const ingredientAttributesData = require('./ingredientAttributes_seeds');
-
 const instructionSeedData = require('./instruction_seeds');
 
 
@@ -27,8 +25,6 @@ const seedDatabase = async () => {
     await attributeData();
 
     await instructionSeedData();
-
-    await ingredientAttributesData();
 
     await baseIngredientData();
 
