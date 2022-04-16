@@ -1,66 +1,58 @@
-const { Model , DataTypes } = require('sequelize'); // requiring sequelize
-const bcrypt = require('bcrypt'); // requiring for encryption
-const sequelize = require('../config/connection.js'); // This is where the DB connection happens.
+const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection');
 
-class User extends Model { // creates a class and extends the class model for user
-    checkPassword(loginPass) { // checks the password for the user login
-        return bcrypt.compareSync(loginPass, this.password); // encryptes the password
-    }
+class User extends Model {
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
 }
 
 User.init(
-    {
-    id: { // created an ID to hold the primary key
-        type: DataTypes.INTEGER, // the id is an integer
-        allowNull: false, // not allowed to be null
-        primaryKey: true, // flag for the priimary key
-        autoIncrement: true,
-        },
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     username: {
-        type: DataTypes.STRING, // is a string
-        allowNull: false, // not allowed to be null
-        },
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     email: {
-        type: DataTypes.STRING, // is a string
-        allowNull: false, // not allowed to be null
-        unique: true, // providing a unique constraint to index the users email
-        validate: { //executes to check the email every time its saved
-            isEmail: true,
-        },
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
     },
-    password: { //storing the password in an object
-        type: DataTypes.STRING, // is a string
-        allowNull: false, // not allowed to be null
-        validate: { // validating the password
-            length: [8], // password requirement is 8 characters in length
-        },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [8],
+      },
     },
-    // signed_in: { //stores if the user is signed in or not
-    //     type: DataTypes.BOOLEAN, // data type in the form of a boolean
-    //     allowNull: false, // not allowed to be null
-    // },
-    last_sign_in: { //keeping track of the last time the user signed in
-        type: DataTypes.DATE, // this data type is a date
-        allowNull: true, // allowed to be null
-        }
+  },
+  {
+    hooks: {
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+      beforeUpdate: async (updatedUserData) => {
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        return updatedUserData;
+      },
     },
-    {
-        hooks: { // created before hooks of the lifecycle of the users password
-            beforeCreate: async (newUserInfo) =>{
-                newUserInfo.password = await bcrypt.hash(newUserInfo.password, 12);
-                return newUserInfo;
-            },
-            beforeUpdate: async (updatedUserInfo) => {
-                updatedUserInfo.password = await bcrypt.hash(updatedUserInfo.password, 12);
-                return updatedUserInfo;
-            }
-        },
-        sequelize, // implementing the sequelize connection
-        freezeTableName: true, // does not allow sequelize to manipulate the table name
-        underscored: true, // converts all camel cased to lower case and underscored columns
-        timestamps: true, // creates a time stamp
-        modelName: 'User', // naming the model
-    }
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user',
+  }
 );
 
-module.exports = User; //exporting the User model as a module
+module.exports = User;
