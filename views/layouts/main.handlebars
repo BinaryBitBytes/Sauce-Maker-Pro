@@ -15,11 +15,11 @@
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/createSauce">Create Sauce</a> |
-        <a href="/logout" id="logout">Log Out</a>
+        <a href="#" id="logout" >Logout</a>
         {{else}}
         <a href="/signUp">Sign Up</a>
         <a href="/login">Login</a>
-         {{!-- <a href="/logout">Log Out</a> --}}
+      
         {{/if}}
         <a href="/">Home</a>
         {{!-- <a href="#">Create Sauce</a> --}}
@@ -32,7 +32,7 @@
   </div>
 
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  <script src="logout.js"></script>
   {{/if}} 
   </body>
 
