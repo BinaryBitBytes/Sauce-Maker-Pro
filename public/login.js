@@ -1,6 +1,5 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
-    alert("acknowledged")
     // Collect values from the login form
     const email = document.querySelector('#emailLogin').value.trim();
     const password = document.querySelector('#passwordLogin').value.trim();
