@@ -3,7 +3,8 @@
 ## Description
   A web-hosted applicatoin with a complete MVC architecture using the MySQL, Express, JavaScript, Node stack. Sauce Maker Pro allows users to create sauce recipes and print them. 
 
-### [Deployed Application Link](https://sauce-maker-pro.herokuapp.com/)
+#### [Deployed Application Link](https://sauce-maker-pro.herokuapp.com/)
+The application runs on Heroku with a JawsDB resource database.
 
 
 ## TOC
@@ -57,7 +58,7 @@ NOTE: At the moment, the create and delete operations must be performed through 
 *  Cody Scoles
 
 ## Tests
-  ![Issues](https://img.shields.io/github/issues/YellowYam/Sauce-Maker-Pro?style=plastic)<br>
+  ![Issues](https://img.shields.io/github/issues/BinaryBitBytes/Sauce-Maker-Pro?style=plastic)<br>
   At present, no tests can be performed on this code. The application meets all requirements without errors.
 
 ## Questions?
