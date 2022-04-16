@@ -3,6 +3,9 @@
 ## Description
   A web-hosted applicatoin with a complete MVC architecture using the MySQL, Express, JavaScript, Node stack. Sauce Maker Pro allows users to create sauce recipes and print them. 
 
+### [Deployed Application Link](https://sauce-maker-pro.herokuapp.com/)
+
+
 ## TOC
   1. [Installation](#installation)   
   2. [Usage](#usage)  
@@ -42,6 +45,8 @@ NOTE: At the moment, the create and delete operations must be performed through 
 * Express.js
 * Handlebars
 * Express Sessions
+* Heroku
+* Insomia
 
 ## Contributors
   If you would like to become a contributor on this project, please find my contact information in the [questions](#questions)
