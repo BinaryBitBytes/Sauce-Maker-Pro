@@ -39,7 +39,7 @@ const instructionseedData = [
         //^^ Action will be expanded to a full string to list out instructions to the user ^^
     },
     {
-        "id": 3,
+        "id": 6,
         "name": "Blend",
         "action": "Blend the chicken stock into the mix",
         "ingredient_id": 20
